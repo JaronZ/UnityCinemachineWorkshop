@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d4e4fa34ad90aab70a45a8048c9d2dc3, type: 3}
       propertyPath: m_Name
-      value: Y Bot 1
+      value: Y Bot
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: d4e4fa34ad90aab70a45a8048c9d2dc3, type: 3}
       propertyPath: m_Controller
@@ -86,6 +86,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d4e4fa34ad90aab70a45a8048c9d2dc3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2672414608182086582}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d4e4fa34ad90aab70a45a8048c9d2dc3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1513191355710663277}
   m_SourcePrefab: {fileID: 100100000, guid: d4e4fa34ad90aab70a45a8048c9d2dc3, type: 3}
 --- !u!1 &1030310076052402514 stripped
 GameObject:
@@ -186,6 +189,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ec028dcfe8e17f9380385cccaf94403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+--- !u!114 &1513191355710663277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030310076052402514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef452f2106084c4b98afcf3b708cbbe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraController
+  noiseCamera: {fileID: 0}
+  transitionSpeed: 5
+  walkingTargetAmplitude: 0.5
+  sprintingTargetAmplitude: 2
+  walingTargetFrequency: 1
+  sprintingTargetFrequency: 1.5
 --- !u!4 &1961494201795163083 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1852576806548013000, guid: d4e4fa34ad90aab70a45a8048c9d2dc3, type: 3}

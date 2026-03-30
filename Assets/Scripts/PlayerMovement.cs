@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField, Min(0f)] private float speed = 5f;
     [SerializeField, Min(0f)] private float runningSpeed = 8f;
     [SerializeField, Min(0f)] private float lookSpeed = 5f;
-    
+
     private PlayerController _controller;
     private Vector2 _movement;
     private Vector2 _look;

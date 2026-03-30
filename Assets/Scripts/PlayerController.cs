@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     private CharacterController _controller;
     public Vector3 Velocity => _controller.velocity;
-    
+
     public bool IsSprinting { get; private set; }
 
     private void Awake()
