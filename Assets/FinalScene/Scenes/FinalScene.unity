@@ -471,7 +471,7 @@ GameObject:
   - component: {fileID: 317406888}
   - component: {fileID: 317406887}
   m_Layer: 0
-  m_Name: Sequencer Camera
+  m_Name: Cutscene Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -512,7 +512,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
-  Loop: 1
+  Loop: 0
   Instructions:
   - Camera: {fileID: 1786096242}
     Blend:
@@ -1037,6 +1037,17 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 6045970307487265170, guid: 386ac7a496b903cc4993eab5eded1dbf, type: 3}
   m_PrefabInstance: {fileID: 4339760288527560516}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1083113461 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4478032163321675283, guid: 386ac7a496b903cc4993eab5eded1dbf, type: 3}
+  m_PrefabInstance: {fileID: 4339760288527560516}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4c79b43603f4979cb119d7e63e400eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
 --- !u!1 &1322577694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,17 +1257,17 @@ MonoBehaviour:
       TangentIn:
         x: 0
         y: 0
-        z: -3.8590512
+        z: -3.8591394
       TangentOut:
         x: 0
         y: 0
-        z: 3.8590512
+        z: 3.8591394
       Rotation:
         value:
-          x: 0.014307928
-          y: 0.7578119
-          z: -0.0014127867
-          w: 0.65231466
+          x: 0.014308479
+          y: 0.75788915
+          z: -0.0014133737
+          w: 0.6522249
     - Position:
         x: 13.32
         y: 2.1
@@ -1264,21 +1275,21 @@ MonoBehaviour:
       TangentIn:
         x: 0
         y: 0
-        z: -3.8633184
+        z: -3.8641977
       TangentOut:
         x: 0
         y: 0
-        z: 3.8633184
+        z: 3.8641977
       Rotation:
         value:
-          x: -0.038212456
-          y: 0.55899656
-          z: -0.009154621
-          w: 0.8282384
+          x: -0.03821389
+          y: 0.558761
+          z: -0.0091822725
+          w: 0.8283969
     - Position:
         x: 21.48
         y: 3.33
-        z: 6.78583
+        z: 6.8
       TangentIn:
         x: 0
         y: 0
@@ -1289,10 +1300,10 @@ MonoBehaviour:
         z: 0
       Rotation:
         value:
-          x: -0.031969536
-          y: 1.1673568e-10
-          z: 0.0667756
-          w: 0.99725574
+          x: -0.0319279
+          y: -2.3347094e-10
+          z: 0.06676813
+          w: 0.9972576
     m_MetaData:
     - Mode: 2
       Tension: 0.5
@@ -1326,6 +1337,106 @@ Transform:
   m_Children: []
   m_Father: {fileID: 317406888}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1511398800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1511398802}
+  - component: {fileID: 1511398801}
+  - component: {fileID: 1511398803}
+  m_Layer: 0
+  m_Name: Camera Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1511398801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511398800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3adf4b57b2fccae47aaac19bb6c0cbd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCameraManagerEvents
+  CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  CameraDeactivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  BlendCreatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  BlendFinishedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1511398803}
+        m_TargetAssemblyTypeName: FinalScene.Scripts.CameraManager, Assembly-CSharp
+        m_MethodName: OnCutOrBlendFinished
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1511398803}
+        m_TargetAssemblyTypeName: FinalScene.Scripts.CameraManager, Assembly-CSharp
+        m_MethodName: OnCutOrBlendFinished
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  CameraManager: {fileID: 317406887}
+--- !u!4 &1511398802
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511398800}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.87512, y: 0, z: 8.4899}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1511398803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511398800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25b7d91a74dbf7600a4e8ce27a54890c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FinalScene.Scripts.CameraManager
+  playerMovement: {fileID: 1083113461}
+  cutsceneCamera: {fileID: 317406887}
+  playerCamera: {fileID: 128480786}
 --- !u!1 &1603781403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,7 +1700,7 @@ GameObject:
   - component: {fileID: 1786096241}
   - component: {fileID: 1786096240}
   m_Layer: 0
-  m_Name: Cutscene Camera
+  m_Name: Player Cutscene Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1858,3 +1969,4 @@ SceneRoots:
   - {fileID: 317406888}
   - {fileID: 140776841}
   - {fileID: 1966692420}
+  - {fileID: 1511398802}
