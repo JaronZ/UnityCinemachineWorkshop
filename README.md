@@ -421,6 +421,8 @@
 
 ## Chapter 4 - Cutscene to Player Camera Switch
 
+### Step 1 - Switching Code
+
 1. In the project menu, go to `Assets/Scripts` and open the `CameraManager` script in your IDE of choice.
 2. Add the following fields to the script:
 
@@ -481,9 +483,79 @@ public void OnCutOrBlendFinished()
 > }
 > ```
 
-3. Enter play mode to see the game switch from the cutscene to the first-person perspective and exit play mode when you're done.
+### Step 2 - Camera Events
+
+1. In the hierarchy menu, click on the `Camera Manager` game object.
+
+<div>
+  <img width="322" height="147" alt="image" src="https://github.com/user-attachments/assets/799f139a-5206-41e7-aec6-de5a6e37585d" />
+</div>
+
+2. Drag the `Cutscene Camera` game object into the `Cutscene Camera` field in the `Camera Manager (Script)` script in the `Camera Manager` game object.
+
+<div>
+  <img width="454" height="113" alt="image" src="https://github.com/user-attachments/assets/b0ebf223-8dc1-4c7b-a1b5-dcb6482850f6" />
+</div>
+
+3. Drag the `Player Camera` game object into the `Player Camera` field in the `Camera Manager (Script)` script in the `Camera Manager` game object.
+
+<div>
+  <img width="454" height="113" alt="image" src="https://github.com/user-attachments/assets/4da93d17-1284-4958-a2dd-1421cf4c80d8" />
+</div>
+
+4. In the inspector menu, click on `Add Component`.
+
+<div>
+  <img width="454" height="285" alt="image" src="https://github.com/user-attachments/assets/6c3a8687-e7de-458c-b313-a837d96f60a1" />
+</div>
+
+5. Search for `Cinemachine Camera Manager Events` and add it to the game object.
+
+<div>
+  <img width="454" height="674" alt="image" src="https://github.com/user-attachments/assets/7ef2a64b-0219-45ea-a224-314320b5d6e1" />
+</div>
+
+6. Click on the `➕` on the `Blend Finished Event (ICinemachineMixer, ICinemachineCamera)` event.
+
+<div>
+  <img width="454" height="451" alt="image" src="https://github.com/user-attachments/assets/cba7be4f-7e32-499b-919a-772f37f723a3" />
+</div>
+
+7. Drag the `Camera Manager` game object into the `None (Object)` field of the `Blend Finished Event (ICinemachineMixer, ICinemachineCamera)` event.
+
+<div>
+  <img width="454" height="451" alt="image" src="https://github.com/user-attachments/assets/a424834d-a317-4895-9427-20d1d878f9f8" />
+</div>
+
+8. Click on the `No Function` dropdown of the `Blend Finished Event (ICinemachineMixer, ICinemachineCamera)` event and select `CameraManager > OnBlendOrCutFinished ()`.
+
+<div>
+  <img width="454" height="451" alt="image" src="https://github.com/user-attachments/assets/09897145-8ae4-48f6-bb99-0b2aafed9809" />
+</div>
+
+9. Click on the `➕` on the `Camera Cut Event (ICinemachineMixer, ICinemachineCamera)` event.
+
+<div>
+  <img width="454" height="472" alt="image" src="https://github.com/user-attachments/assets/02a2a19e-4016-4daf-8980-edf3cfe60e45" />
+</div>
+
+10. Drag the `Camera Manager` game object into the `None (Object)` field of the `Camera Cut Event (ICinemachineMixer, ICinemachineCamera)` event.
+
+<div>
+  <img width="454" height="472" alt="image" src="https://github.com/user-attachments/assets/01509bea-2bc0-4d54-844c-738e2f16d8b6" />
+</div>
+
+11. Click on the `No Function` dropdown of the `Camera Cut Event (ICinemachineMixer, ICinemachineCamera)` event and select `CameraManager > OnBlendOrCutFinished ()`.
+
+<div>
+  <img width="454" height="472" alt="image" src="https://github.com/user-attachments/assets/87ccbe92-4385-416a-acc5-f3e196bb5f5a" />
+</div>
+
+12. Enter play mode to see the game switch from the cutscene to the first-person perspective and exit play mode when you're done.
 
 ## Chapter 5 - Movement Screenshake
+
+### Step 1 - Screenshake Code
 
 1. In the project menu, go to `Assets/Scripts` and open the `CameraController` script in your IDE of choice.
 2. Add the following fields to the script:
@@ -567,3 +639,52 @@ private void Update()
 >     }
 > }
 > ```
+
+### Step 2 - Add Screenshake to First-Person Camera
+
+1. In the hierarchy menu, click on the `First-person Camera` game object within the `Player Camera` game object.
+
+<div>
+  <img width="321" height="279" alt="image" src="https://github.com/user-attachments/assets/53a1d71a-dc2f-4732-ba60-ccfe763cbd33" />
+</div>
+
+2. In the inspector menu, click on `Add Component`.
+
+<div>
+  <img width="454" height="885" alt="image" src="https://github.com/user-attachments/assets/dd5f0e46-a992-4902-acb9-0fb592ecb79f" />
+</div>
+
+3. Search for `Cinemachine Basic Multi Channel Perlin` and add it to the camera.
+
+<div>
+  <img width="454" height="173" alt="image" src="https://github.com/user-attachments/assets/26980614-81eb-4310-8255-1e294a662182" />
+</div>
+
+4. Click on the cogwheel to the right of `Noise Profile` in the `Cinemachine Basic Mutli Channel Perlin` component of the `First-person Camera` game object.
+
+<div>
+  <img width="454" height="173" alt="image" src="https://github.com/user-attachments/assets/311c41b9-99b4-4362-b8b4-b9731b5fd5c9" />
+</div>
+
+5. Click on `Presets > Handheld_normal_mild`.
+
+<div>
+  <img width="454" height="132" alt="image" src="https://github.com/user-attachments/assets/32cd2ce3-c104-4923-aa82-c06dc33340d6" />
+</div>
+
+6. In the hierarchy menu, click on the `Y Bot` game object.
+
+<div>
+  <img width="322" height="272" alt="image" src="https://github.com/user-attachments/assets/03873f8d-e59e-48dc-a138-19c643395293" />
+</div>
+
+7. Drag the `First-person Camera` game object into `Noise Camera` of the `Camera Controller (Script)` script of the `Y Bot` game object.
+
+<div>
+  <img width="451" height="231" alt="image" src="https://github.com/user-attachments/assets/c83fd739-c289-4d3d-b12a-58677644ad17" />
+</div>
+
+8. Enter play mode and press shift while moving the player with WASD to see the screen shake and exit when you're done.
+
+> [!NOTE]
+> You'll need to wait for the cutscene to finish before you can start moving the player.
