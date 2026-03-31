@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace FinalScene.Scripts
 {
+    [DisallowMultipleComponent]
     public class CameraManager : MonoBehaviour
     {
         [SerializeField] private PlayerMovement playerMovement;
