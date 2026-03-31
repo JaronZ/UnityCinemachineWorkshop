@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
@@ -8,10 +9,5 @@ public class CameraController : MonoBehaviour
     private void Awake()
     {
         _playerController = GetComponent<PlayerController>();
-    }
-
-    private void Update()
-    {
-        // Set the Noise Amplitude and Noise Frequency here
     }
 }
