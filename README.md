@@ -1,14 +1,16 @@
 # 📷 Cinemachine Workshop
 
+<!-- 
 > [!IMPORTANT]
 > Make sure to install Unity 6000.3.6f1 if you haven't done so already
+-->
 
 ## Chapter 1 - Setup
 
 ### Step 1 - Opening the Project
 
 1. Clone this repository and add it as project to Unity.
-2. Open the project using Unity 6000.3.6f1.
+2. Open the project <!-- using Unity 6000.3.6f1. -->
 
 ### Step 2 - Adding a Cinemachine Brain
 
